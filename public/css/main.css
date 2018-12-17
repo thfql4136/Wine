@@ -24,8 +24,8 @@ header{width:100%; height:12%; background-color:#edeef2; }
 #slides1 .slide:nth-child(4) {left:300%; top:0;}
 #slides1 .slide:nth-child(5) {left:400%; top:0;}
 
-.nav{position: absolute; width:80%;  background-color:#fff; bottom:4%; left:10%;}
-
+.nav{position: relative; width:80%;  background-color:#fff; top:-10%;left:10%; z-index: 111111;}
+.nav_fix {top:0; position: fixed;}
 .nav > ul > li {float:left; width:16.6%; height:100%; cursor: pointer; position:relative;}
 .menu > div > img{width:80%; min-width:40px;}
 .menu > div:nth-child(1){float:left; width:40%; padding:5%;}
@@ -35,16 +35,12 @@ header{width:100%; height:12%; background-color:#edeef2; }
 .menu_tit  .line {width:0%; height:2px; background-color:#a22c4d; position:absolute; bottom:0; left:0;}
 
 
-
-
-
-
 .title {width:30%; margin:0 auto; font-size: 1.7rem; text-align: center; padding-top:2%; font-weight: bold;}
 .wh{color:#fff;}
 
 .products {width:100%; height:90%; background-color:#222;}
 .product {width:95%; height:100%; background-color:#edeef2; margin:0 auto;}
-.best {padding-top:6%;}
+.best {padding-top:2%;}
 
 .dec_wrap {width:100%; height:70%; background-color:#222;}
 .dec {width:95%; height:100%; background-color:#f7f7f7; margin:0 auto;}
@@ -52,7 +48,7 @@ header{width:100%; height:12%; background-color:#edeef2; }
 .box{width:45%; height:100%; float:left; margin-right:5%;}
 .table{width:40%;  display: table; text-align: center; float:left; padding-top:8%;}
 .cell {display: table-cell; vertical-align: middle;}
-.cell >h4 {font-style: italic; padding-bottom:1%;}
+.cell > h4 {font-style: italic; padding-bottom:1%;}
 
 .store_wrap {width:100%; height:80%; background-color:#222; }
 .store {width:95%; height:100%; background-image: url("../img/store.png"); background-repeat: no-repeat; background-size: cover; background-position:center; margin:0 auto;}

@@ -4,6 +4,22 @@ $(".gnb").hover(function(){
     $(".menu_hover").stop().slideUp();
 });
 
+$(window).scroll(function(){
+	var gap = $("html, body").scrollTop();
+	if(gap > 600) {
+		if($(".nav").hasClass("nav_fix") == false) {
+			$(".nav").css({"top":"-15%"}).addClass("nav_fix");
+			$(".nav").stop().animate({"top":"0%"}, 500);
+	}
+}
+	 else {
+		 if(gap < 600) {
+		$(".nav").removeClass("nav_fix");
+		$(".nav").stop().animate({"top":"-10%"}, 500);
+	} 
+}
+});
+
 
 var n2 = 1;
 var interval2;
@@ -44,7 +60,7 @@ clearInterval(interval2);
  });
 
  
- var WheelScroll = (function(){
+  var WheelScroll = (function(){
 	function WheelScroll(_opt) {
 		var obj = this;
 		if(_opt) {
@@ -106,56 +122,18 @@ clearInterval(interval2);
 		$("html, body").stop().animate({"scrollTop":obj.gap[obj.now]+"px"}, obj.speed*obj.speedGap, fn);
 	}
 	return WheelScroll;
-}());
+}()); 
 
-var prdNum = 0;
-
-$(".menu").click(function(){ //이벤트 선언
-/* 	$(".news_cont").eq(prdNum).stop().animate({"top":"5%", "opacity":0}, 500 , function(){
-		$(this).css({"display":"none"});
-		
-	}); */
- prdNum = $(this).index(); //클릭 된 애 값을 받아올꺼야, index는 값을 가져올때 사용
-/*  $(".news_cont").eq(prdNum).css({"display":"block"}).stop().animate({"top":0, "opacity":1}, 500 ); */
- $(this).css({"color":"#222"});
- $(".menu_tit").children(".line").css({"width":"0%"});
-$(this).css({"color":"#a22c4d"});
-if($(this).index() !=prdNum){
-	$(this).find(".menu_img1 > img").attr('src', '../img/wine2.png');
-}
-else{
-	$(this).find(".menu_img1 > img").attr('src', '../img/wine.png');
-}
-
-$(".menu_tit").children(".line").css({"width":"100%"});
+var pages = new WheelScroll({
+	page: ".page",
+	nav: ".menu", 
+	speed: 300
 });
 
 
-/*
-$(".menu").hover(function(){//이벤트 선언
-	if($(this).index() !=prdNum){ //현재 선택된 애는 제외 시킨다
-		$(this).css({"color":"#a22c4d"});
-		$(".menu_tit").children("div").stop().animate({"width":"100%"}, 100);
-		$(this).find(".menu_img1 > img").attr('src', '../img/wine.png');
-		$(this).find(".menu_img2 > img").attr('src', '../img/wine-bottle.png');
-		$(this).find(".menu_img3 > img").attr('src', '../img/filter.png');
-		$(this).find(".menu_img4 > img").attr('src', '../img/wine-glasses.png');
-		$(this).find(".menu_img5 > img").attr('src', '../img/bucket.png');
-		$(this).find(".menu_img6 > img").attr('src', '../img/wine-barrel.png');
-	}
-},function(){
-	if($(this).index() !=prdNum){
-		$(this).css({"color":"#222"});
-		$(".menu_tit").children("div").stop().animate({"width":"0%"}, 100);
-		$(this).find(".menu_img1 > img").attr('src', '../img/wine2.png');
-		$(this).find(".menu_img2 > img").attr('src', '../img/wine-bottle2.png');
-		$(this).find(".menu_img3 > img").attr('src', '../img/filter2.png');
-		$(this).find(".menu_img4 > img").attr('src', '../img/wine-glasses2.png');
-		$(this).find(".menu_img5 > img").attr('src', '../img/bucket2.png');
-		$(this).find(".menu_img6 > img").attr('src', '../img/wine-barrel2.png');
-	}
-});
-*/
+
+
+
 var swapImg = ['../img/wine.png', '../img/wine-bottle.png', '../img/filter.png', '../img/wine-glasses.png', '../img/bucket.png', '../img/wine-barrel.png'];
 var oriImg = ['../img/wine2.png', '../img/wine-bottle2.png', '../img/filter2.png', '../img/wine-glasses2.png', '../img/bucket2.png', '../img/wine-barrel2.png'];
 var n = 0;
@@ -192,3 +170,10 @@ $(".menu").click(function(){
 	$(this).find(".line").stop().animate({"width":"100%"}, 100);
 });
 $(".menu").eq(0).trigger("click");
+
+
+	function swing() {
+		$('.circle').animate({'top':'5px', 'opacity':'1'},1000).animate({'top':'20px', 'opacity':'0'},1000, swing);
+	}
+	swing();
+
