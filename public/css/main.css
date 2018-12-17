@@ -24,9 +24,19 @@ header{width:100%; height:12%; background-color:#edeef2; }
 #slides1 .slide:nth-child(4) {left:300%; top:0;}
 #slides1 .slide:nth-child(5) {left:400%; top:0;}
 
-.nav{position: absolute; width:80%; height:10%; background-color:#fff; bottom:2%; left:10%;}
+.nav{position: absolute; width:80%;  background-color:#fff; bottom:4%; left:10%;}
 
-.nav > ul > li {float:left; width:10%; height:100%;}
+.nav > ul > li {float:left; width:16.6%; height:100%; cursor: pointer; position:relative;}
+.menu > div > img{width:80%; min-width:40px;}
+.menu > div:nth-child(1){float:left; width:40%; padding:5%;}
+.menu > div:nth-child(2){float:left; width:57%; font-size: 1.5rem; margin-top:12%; border-right:1px solid #ccc;}
+.menu .line{ width:100%; height:100%;}
+.last > div:nth-child(2){border-right:none;}
+.menu_tit  .line {width:0%; height:2px; background-color:#a22c4d; position:absolute; bottom:0; left:0;}
+
+
+
+
 
 
 .title {width:30%; margin:0 auto; font-size: 1.7rem; text-align: center; padding-top:2%; font-weight: bold;}
