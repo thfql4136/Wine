@@ -119,7 +119,7 @@ clearInterval(interval2);
 	}
 	WheelScroll.prototype.animation = function(obj, fn) {
 		obj.speedGap = Math.abs(obj.now - obj.oldNow);
-		$("html, body").stop().animate({"scrollTop":obj.gap[obj.now]+"px"}, obj.speed*obj.speedGap, fn);
+		$("html, body").stop().animate({"scrollTop":(obj.gap[obj.now])+"px"}, obj.speed*obj.speedGap, fn);
 	}
 	return WheelScroll;
 }()); 
@@ -172,8 +172,8 @@ $(".menu").click(function(){
 $(".menu").eq(0).trigger("click");
 
 
-	function swing() {
-		$('.circle').animate({'top':'5px', 'opacity':'1'},1000).animate({'top':'20px', 'opacity':'0'},1000, swing);
-	}
-	swing();
+function swing() {
+	$('.circle').animate({'top':'5px', 'opacity':'1'},1000).animate({'top':'20px', 'opacity':'0'},1000, swing);
+}
+swing();
 
