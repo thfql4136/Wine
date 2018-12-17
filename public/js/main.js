@@ -130,6 +130,8 @@ else{
 $(".menu_tit").children(".line").css({"width":"100%"});
 });
 
+
+/*
 $(".menu").hover(function(){//이벤트 선언
 	if($(this).index() !=prdNum){ //현재 선택된 애는 제외 시킨다
 		$(this).css({"color":"#a22c4d"});
@@ -152,5 +154,41 @@ $(".menu").hover(function(){//이벤트 선언
 		$(this).find(".menu_img5 > img").attr('src', '../img/bucket2.png');
 		$(this).find(".menu_img6 > img").attr('src', '../img/wine-barrel2.png');
 	}
+});
+*/
+var swapImg = ['../img/wine.png', '../img/wine-bottle.png', '../img/filter.png', '../img/wine-glasses.png', '../img/bucket.png', '../img/wine-barrel.png'];
+var oriImg = ['../img/wine2.png', '../img/wine-bottle2.png', '../img/filter2.png', '../img/wine-glasses2.png', '../img/bucket2.png', '../img/wine-barrel2.png'];
+var n = 0;
+$(".menu").mouseenter(function(){
+	$(".menu").each(function(i){
+		if(n != i) {
+			$(this).find(".menu_tit").css({"color":"#222"});
+			$(this).find("img").attr("src",oriImg[i]);
+			$(this).find(".line").stop().animate({"width":0}, 100);
+		}
+	});
+	$(this).find(".menu_tit").css({"color":"#a22c4d"});
+	$(this).find("img").attr("src", swapImg[$(this).index()]);
+	$(this).find(".line").stop().animate({"width":"100%"}, 100);
+});
+$(".menu").mouseleave(function(){
+	$(".menu").each(function(i){
+		if(n != i) {
+			$(this).find(".menu_tit").css({"color":"#222"});
+			$(this).find("img").attr("src",oriImg[i]);
+			$(this).find(".line").stop().animate({"width":0}, 100);
+		}
+	});
+});
+$(".menu").click(function(){
+	n = $(this).index();
+	$(".menu").each(function(i){
+		$(this).find(".menu_tit").css({"color":"#222"});
+		$(this).find("img").attr("src",oriImg[i]);
+		$(this).find(".line").stop().animate({"width":0}, 100);
+	});
+	$(this).find(".menu_tit").css({"color":"#a22c4d"});
+	$(this).find("img").attr("src", swapImg[n]);
+	$(this).find(".line").stop().animate({"width":"100%"}, 100);
 });
 $(".menu").eq(0).trigger("click");
