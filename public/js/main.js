@@ -172,8 +172,11 @@ $(".menu").click(function(){
 $(".menu").eq(0).trigger("click");
 
 
-function swing() {
-	$('.circle').animate({'top':'5px', 'opacity':'1'},1000).animate({'top':'20px', 'opacity':'0'},1000, swing);
-}
-swing();
+$(function() {
+	function swing() {
+		$().animate({'top':'38%', 'opacity':'1'},1000).animate({'top':'40%', 'opacity':'0'},1000, swing);
+	}
+	swing();
+});
+
 
