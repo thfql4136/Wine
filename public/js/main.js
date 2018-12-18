@@ -174,9 +174,17 @@ $(".menu").eq(0).trigger("click");
 
 $(function() {
 	function swing() {
-		$().animate({'top':'38%', 'opacity':'1'},1000).animate({'top':'40%', 'opacity':'0'},1000, swing);
+		$(".big").animate({'top':'45%', 'opacity':'1'},1000).animate({'top':'47%', 'opacity':'0'},1000, swing);
 	}
 	swing();
 });
 
+
+var container = document.getElementById('map');
+var options = {
+	center: new daum.maps.LatLng(37.523511, 127.031188),
+	level: 3
+};
+
+var map = new daum.maps.Map(container, options);
 

@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="../css/main.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e50710521bdba057752faf9a302249da"></script>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e50710521bdba057752faf9a302249da&libraries=clusterer"></script>
   <script defer src="/__/firebase/5.7.0/firebase-app.js"></script>
   <script defer src="/__/firebase/5.7.0/firebase-auth.js"></script>
   <script defer src="/__/firebase/5.7.0/firebase-database.js"></script>
@@ -23,7 +25,7 @@
 </head>
 
 <body>
-  <header class="clear">
+  <header class="clear  page">
     <div class="logo_wrap">
 
     </div>
@@ -69,7 +71,7 @@
       </div>
     </div>
   </header>
-  <section class="banners page">
+  <section class="banners">
     <div class="banner ">
       <ul class="slides" id="slides1">
         <li class="slide"><img src="../img/wine_bg.jpg" alt="img" class="img"></li>
@@ -118,7 +120,13 @@
       <div class="title en">WINE TIME</div>
       <div class="box_wrap clear">
         <div class="box">
-
+          <div class="time1"><img src="../img/time1.png" class="img"></div>
+          <div class="time2"><img src="../img/time2.png" class="img"></div>
+          <div class="time3"><img src="../img/time3.png" class="img"></div>
+          <div class="time4"><img src="../img/time4.png" class="img"></div>
+          <div class="time5"><img src="../img/time5.png" class="img"></div>
+          <div class="time6"><img src="../img/time6.png" class="img"></div>
+          <div class="wine_mark"><img src="../img/wine_mark.png" class="img"></div>
         </div>
         <div class="table">
           <div class="cell kr">
@@ -133,14 +141,34 @@
               최정상급 미국 와인 포트폴리오는 미국 현지 와인 샵을 능가합니다.
               이 밖에 약 500년의 역사를 가진 독일의 ‘슈피겔라우(Spiegelau)’와인 글라스와
               명품 워터브랜드 ‘보스(Voss)’등 와인과 관련된 모든 것을 취급하고 있습니다.</p>
-          </div>
-        </div>
+          </div>  
+        </div>   
       </div>
     </div>
   </section>
   <section class="store_wrap page" id="page3">
     <div class="store">
       <div class="title en wh">FIND STORE</div>
+      <ul class="store_box clear">
+        <li>
+          <img src="../img/store_bg.png" >
+        </li>
+        <li>
+          <div>SEARCH STORE</div>
+          <div>압구정점 <i class="fas fa-search"></i></div>
+        </li>
+        <li>
+          <div>와인타임 압구정점</div>
+          <div>강남구 도산대로 37길 26 1층 (신사동, 램프빌딩)</div>
+          <div>전화번호 02-548-3720</div>
+          <div>영업시간 평일 10:00 A.M. ~ 09:00 P.M.</div>
+          <div>토요일 11:00 A.M. ~ 06:00 P.M.</div>
+          <div>일요일 및 공휴일 휴무</div>
+        </li>
+        <li>
+          <div id="map" style="width:96%;height:96%;"></div>
+        </li>
+      </ul>
     </div>
   </section>
   <section class="map_wrap page" id="page4">
@@ -162,35 +190,76 @@
         </div>
       </div>
       <div class="icon canada">
-          <i class="fas fa-map-marker-alt"></i>
-          <div class="icon_cont canada_cont">
-            캐나다
-          </div>
+        <i class="fas fa-map-marker-alt"></i>
+        <div class="icon_cont canada_cont">
+          캐나다
         </div>
-        <div class="icon america">
-            <i class="fas fa-map-marker-alt"></i>
-            <div class="icon_cont america_cont">
-              미국
-            </div>
-          </div>
-          <div class="icon zealand">
-              <i class="fas fa-map-marker-alt"></i>
-              <div class="icon_cont zealand_cont">
-                뉴질랜드
-              </div>
-            </div>
-            <div class="icon australia">
-                <i class="fas fa-map-marker-alt"></i>
-                <div class="icon_cont australia_cont">
-                  호주
-                </div>
-              </div>
-              <div class="icon africa">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <div class="icon_cont africa_cont">
-                    남아프리카
-                  </div>
-                </div>
+      </div>
+      <div class="icon america">
+        <i class="fas fa-map-marker-alt"></i>
+        <div class="icon_cont america_cont">
+          미국
+        </div>
+      </div>
+      <div class="icon zealand">
+        <i class="fas fa-map-marker-alt"></i>
+        <div class="icon_cont zealand_cont">
+          뉴질랜드
+        </div>
+      </div>
+      <div class="icon australia">
+        <i class="fas fa-map-marker-alt"></i>
+        <div class="icon_cont australia_cont">
+          호주
+        </div>
+      </div>
+      <div class="icon africa">
+        <i class="fas fa-map-marker-alt"></i>
+        <div class="icon_cont africa_cont">
+          남아프리카
+        </div>
+      </div>
+      <div class="icon argentina">
+        <i class="fas fa-map-marker-alt"></i>
+        <div class="icon_cont argentina_cont">
+          아르헨티나
+        </div>
+      </div>
+      <div class="icon chile">
+        <i class="fas fa-map-marker-alt"></i>
+        <div class="icon_cont chile_cont">
+          아르헨티나
+        </div>
+      </div>
+      <i class="fas fa-map-marker-alt big"></i>
+      <div class="icon france">
+        
+        <div class="icon_cont france_cont">
+          프랑스
+        </div>
+        <div class="icon_cont italiana_cont">
+          이탈리아
+        </div>
+        <div class="icon_cont germany_cont">
+          독일
+        </div>
+        <div class="icon_cont spain_cont">
+          스페인
+        </div>
+        <div class="icon_cont portugal_cont">
+          포루투칼
+        </div>
+        <ul class="icon_cont greece_cont">
+          <li>그리스</li>
+          <li>영국</li>
+          <li>오스트리아</li>
+          <li>스위스</li>
+          <li>불가리아</li>
+          <li>헝가리</li>
+          <li>터키</li>
+          <li>이스라엘</li>
+        </ul>
+      </div>
     </div>
     </div>
   </section>
