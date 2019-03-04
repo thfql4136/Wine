@@ -1,6 +1,52 @@
 body, html {width:100%; height:100%;}
+.gr{color: #999;}
+.purple {color:#a22c4d; }
+.navs_mo {display:none;}
+.navs_mo > div{float:right; font-size: 2rem; margin-left:45%; margin-right:5%;}
+.navs_sub {width:100%; position: absolute; top:7.5rem; z-index:9; display:none; background-color:rgba(255,255,255,0.8);}
+.navs_sub > li {padding:1em;  color:#666; }
+.navs_sub > li > a:hover {color:#a22c4d; }
+.stars-container {
+	position: relative;
+	display: inline-block;
+	color: transparent;
+  }
+  
+  .stars-container:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: '★★★★★';
+	color: lightgray;
+  }
+  
+  .stars-container:after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: '★★★★★';
+	color: #a22c4d;
+	overflow: hidden;
+  }
+  
+  .stars-0:after { width: 0%; }
+  .stars-10:after { width: 10%; }
+  .stars-20:after { width: 20%; }
+  .stars-30:after { width: 30%; }
+  .stars-40:after { width: 40%; }
+  .stars-50:after { width: 50%; }
+  .stars-60:after { width: 60%; }
+  .stars-70:after { width: 70%; }
+  .stars-80:after { width: 80%; }
+  .stars-90:after { width: 90%; }
+  .stars-100:after { width: 100; }
+
+  
+.loader {width:100%; height:100%; background-color: rgba(0,0,0,0.4); display: table; position: absolute; z-index:99999;}
+.loader > div {display: table-cell; vertical-align: middle; font-size: 5rem; color:#fff; text-align: center;}
 header{width:100%; height:12%; background-color:#edeef2; }
-.logo_wrap{float:left; width:12%; height:120%; background-color:#a22c4d; margin-left:3%; min-width:150px; z-index: 11111; position: relative; top:0; left:-1%;}
+.logo_wrap{float:left; width:12%; height:120%;  margin-left:3%; min-width:150px; z-index: 11111; position: relative; top:0; left:-1%;}
+.logo {width:100%; margin:0 auto; background-color:#a22c4d; padding:10% 25%;}
 .gnb{float:right; width:74%; height:50%;margin-right:3%;}
 .login {width:30%;  height:50%; float:right; color:#fff; padding-right:3%;}
 .login  > li{float:right; background-color:#a22c4d; padding:1.5% 3%;}
@@ -14,9 +60,31 @@ header{width:100%; height:12%; background-color:#edeef2; }
 .menu_hover > ul > li:hover{ width:100%; background-color:rgba(255,255,255,0.5); color:#a22c4d;}
 .menu_hover > ul > li > a:hover{color:#a22c4d;}
 
-.banners{width:100%; height:80%;}
-.banner {width:100%; height:100%; margin:0 auto; overflow: hidden; position: relative; top:-3%;z-index: -1; }
+.banners{width:100%; height:80%; }
+.banner {width:100%; height:100%; margin:0 auto; overflow: hidden; position: relative; top:-3%;z-index: -1;}
+.ban_pro {width:15%; min-width:200px; position: absolute; z-index:11111; top:16%; left:13%; background-color:#fff; padding:2.5% 1.5% 2%; }
+.ban_top {width:60px; height:60px; background-color:#a22c4d; border:8px solid #fff; border-radius: 50px; position: absolute; top:-10%; left:37%; z-index:11111;}
+.ban_top > p{font-size: 1.25rem; color:#fff; font-style: italic; margin-left:12%; margin-top:25%; }
+.grape{position: absolute; top:5%; left:5%; width:20%;}
+.prod {width:40%; margin:0 auto;}
+.prod_cont {width:100%; margin-top:1%; }
+.prod_cont >  span {display: inline-block; color:#999; }
+.prod_cont2 {width:100%; font-size: 1.25rem; margin-top:1%;}
+.itary {width:40%; float:left;}
+.price {width:40%; float:right; color: #a22c4d;}
+.prod_cont3 {width:100%; margin-top:1%; font-size: 1.5rem; }
+.prod_cont3 > li{float:left; }
+.prod_cont4 {width:100%; margin-top:5%; font-size: 1.5rem; cursor: pointer;}
+.more {width:40%; float:left; margin-top:5%;  z-index:11111; cursor: pointer; }
+.cart {width:50%; float:right; }
+.cart > div:nth-child(1) {float:left; width:30%; color: #a22c4d; margin-top:10%; margin-left:25%;}
+.cart > div:nth-child(2) {float:left; width:70%; background-color: #a22c4d; width:35px; height:35px; color:#fff; border-radius: 50px;}
+.cart > div:nth-child(2) > div {margin-left:20%; margin-top:20%;}
+.ban_cont {width:25%; min-width:350px; height:70%; position: absolute; top:13%; right:13%; z-index:11111;}
+.ban_btn {width:45%;  background-color: #a22c4d; margin:3% auto 0; padding:2%; border-radius: 30px; font-size: 1.25rem;  text-align: center;  }
+
 .slides {width:100%; height:100%; position: relative;}
+.slide > img {min-width:770px;}
 #slides1 .slide { width:100%;  position: absolute; }
 #slides1 .slide:nth-child(1) {left:0; top:0;}
 #slides1 .slide:nth-child(2) {left:100%; top:0;}
@@ -24,14 +92,14 @@ header{width:100%; height:12%; background-color:#edeef2; }
 #slides1 .slide:nth-child(4) {left:300%; top:0;}
 #slides1 .slide:nth-child(5) {left:400%; top:0;}
 
-.nav{position: relative; width:80%;  background-color:#fff; top:-10%;left:10%; z-index: 111111;}
+.nav{position: relative; width:80%; background-color:#fff; top:-20%;left:10%; z-index: 111111;}
 .nav_fix {top:0; position: fixed;}
 .nav > ul > li {float:left; width:16.6%; height:100%; cursor: pointer; position:relative;}
 .menu > div > img{width:80%; min-width:40px;}
 .menu > div:nth-child(1){float:left; width:40%; padding:5%;}
-.menu > div:nth-child(2){float:left; width:57%; font-size: 1.5rem; margin-top:12%; border-right:1px solid #ccc;}
+.menu > div:nth-child(2){float:left; width:57%; font-size: 1.25rem; margin-top:12%; border-right:1px solid #ccc;}
 .menu .line{ width:100%; height:100%;}
-.last > div:nth-child(2){border-right:none;}
+.menu:nth-child(6) > div:nth-child(2){border-right:0;}
 .menu_tit  .line {width:0%; height:2px; background-color:#a22c4d; position:absolute; bottom:0; left:0;}
 
 
@@ -39,9 +107,21 @@ header{width:100%; height:12%; background-color:#edeef2; }
 .wh{color:#fff;}
 .sns_tit {padding-top:2%;}
 
-.products {width:100%; height:90%; background-color:#222;}
+.products {width:100%; height:100%; background-color:#222;}
 .product {width:95%; height:100%; background-color:#edeef2; margin:0 auto;}
 .best {padding-top:6%;}
+.sell_box {border:1px solid #ccc; padding:0.5%; width:17.6%; margin:2% 1% 0 1.2%; float:left;}
+.sellers_prods {width:100%; background-color:#fff; }
+.sell_prod {width:45%; margin-left:35%; padding-top:5%;}
+.sell_prod > img {width:50%;}
+.sell_prod_cont {padding:5%; }
+.sell_prod_cont > span{display: inline-block;}
+.sell_prod_cont2 {padding:0 0 0 5%; }
+.sell_prod_cont3 {padding:1% 0 0 5%; }
+.sell_prod_cont4 {padding:0 0 0 5%;}
+.sell_prod_cont4 > .more {font-size: 1.125rem; cursor: pointer;}
+.sell_prod_cont4 > .cart{font-size: 1.25rem; padding-bottom:5%; cursor: pointer;}
+.sell_prod_cont4 > .cart > div:nth-child(2){background-color: #a22c4d; width:30px; height:30px; color:#fff; border-radius: 50px;}
 
 .dec_wrap {width:100%; height:68%; background-color:#222;}
 .dec {width:95%; height:100%; background-color:#f7f7f7; margin:0 auto;}
@@ -54,6 +134,23 @@ header{width:100%; height:12%; background-color:#edeef2; }
 .time1{width:9%;top:6%; left:25%;}
 .time2{width:9.5%; top:3%; left:30%; z-index: 111;}
 .time3{width:10%; top:7%; left:34%;}
+.wine {animation-duration: 2s;}
+.wine:nth-child(1) { animation-name: box-lt;}
+.wine:nth-child(2) {animation-name:box-ct;}
+.wine:nth-child(3) { animation-name: box-rt;}
+@keyframes box-lt {
+	0%{opacity:0; transform:translateX(-70px);}
+	100%{opacity:1; transform:translateX(0px);}
+}
+@keyframes box-ct {
+	0%{opacity:0; transform:translateY(50px);}
+	100%{opacity:1; transform:translateY(0px);}
+}
+@keyframes box-rt {
+	0%{opacity:0; transform:translateX(50px);}
+	100%{opacity:1; transform:translateX(0px);}
+}
+
 .time4{top:5%; right:5%; width:7%; }
 .time5{width:15%; bottom:0%; left:5%; z-index: 111;}
 .time6{width:10%; bottom:11%; left:1%;}
@@ -77,41 +174,41 @@ header{width:100%; height:12%; background-color:#edeef2; }
 
 .map_wrap {width:100%; height:100%; background-color:#222; }
 .map_cover {background-color:#edeef2; width:95%; height:100%; margin:0 auto;}
-.map {width:100%; height:100%; background-image: url("../img/map.png"); background-repeat: no-repeat; background-size:100%; background-position:center;   position: relative;}
+.map {width:100%; height:100%; background-image: url("../img/map.png"); background-repeat: no-repeat; background-size:130%; background-position:center;   position: relative;}
 .map_table{width:90%; padding-top:1%; display: table; padding-left:10%; text-align:center; }
 .map_cell {display:table-cell; vertical-align: middle; width:100%;}
 .icon {position: absolute; width:5%; height:5%;  color:#a22c4d; margin:0 auto; text-align: center;}
 .icon > i{font-size:3rem;margin-bottom:5%;}
-.icon_cont {  position: absolute; width:100%; padding:3%; background-color: #a22c4d; border-radius: 30px; color:#fff;}
+.icon_cont {  position: absolute; width:100%; min-width:80px; padding:3%; background-color: #a22c4d; border-radius: 30px; color:#fff;}
 .big{font-size: 4.5rem; top:45%; left:55.5%; color:#a22c4d; position: absolute;}
-.canada {top:40%; left:22%; }
-.america {top:51%; left:28%;}
-.zealand {bottom:12%; right:20%;}
-.australia {bottom:20%; right:26%;}
-.africa {bottom:20%; right:45%;}
-.argentina{bottom:14%; left:36%;}
-.argentina_cont{bottom:-40%; left:40%;}
-.chile{bottom:18%; left:34.5%;}
-.chile_cont{bottom:35%; left:-70%; }
+.canada {top:37%; left:13%; }
+.america {top:51%; left:22%;}
+.zealand {bottom:12%; right:10%;}
+.australia {bottom:19%; right:20%;}
+.africa {bottom:18%; right:44%;}
+.argentina{bottom:12%; left:33%;}
+.argentina_cont{bottom:-50%; left:40%;}
+.chile{bottom:15%; left:31%;}
+.chile_cont{bottom:5%; left:-120%; }
 .france{top:48%; right:41%;}
 .france_cont {top:-80%; right:83%;}
 .italiana_cont{top:-20%; right:83%;}
 .germany_cont{top:40%; right:83%;}
 .spain_cont{top:100%; right:83%;}
 .portugal_cont{top:160%; right:83%;}
-.greece_cont{top:-80%; right:-90%;}
+.greece_cont{top:-100%; right:-190%;}
 
 .event_wrap {width:100%; height:50%; background-color:#222; }
 .event {  width:95%; height:100%; background-image: url("../img/event.jpg"); background-repeat: no-repeat; background-size: cover; background-position:center; margin:0 auto; }
 .event_tit {color:#b9b2b2; z-index: 111;}
 .evnet_box{width:100%; height:100%; background-color: rgba(0,0,0,0.5);}
 .sale {width:50%; text-align: center; margin:1% auto; color:#b9b2b2;}
-.sale p{padding:1% 0; font-size: 1.5rem;}
-.sale_cont {width:100%; padding-top:4%; }
-.sale_lt{float:left; border-right:1px solid #b9b2b2; width:50%;}
+.sale p{ font-size: 1.5rem;}
+.sale_cont {width:100%; padding-top:2%; margin-left:10%;}
+.sale_lt{float:left; border-right:1px solid #b9b2b2; width:40%;padding-right:10%;}
 .sale_lt > span:nth-child(1){font-size: 2rem;}
 .sale_lt > span:nth-child(2){font-size: 5rem; font-style: italic;}
-.sale_rt{float:left; margin-left:10%; font-size: 1.5rem; margin-top:4%;}
+.sale_rt{float:left; margin-left:10%; font-size: 1.5rem; margin-top:4%; width:40%;}
 .sale_btn {width:20%;  background-color: #a22c4d; margin:3% auto 0; padding:2%; border-radius: 30px; font-size: 1.25rem; cursor: pointer;}
 
 .sns_wrap {width:100%; height:70%; background-color:#222; }
@@ -123,11 +220,13 @@ header{width:100%; height:12%; background-color:#edeef2; }
 .sns_small li:nth-child(1){width:100%; margin-bottom:5%;}
 .sns_small li:nth-child(2){width:100%; margin-bottom:5%;}
 .sns_small li:nth-child(3){width:100%; }
+.sns_small li:hover {opacity: 0.5;}
 .sns_mid{width:65%; float:right; overflow: hidden;}
 .sns_mid  img{width:100%}
 .sns_mid li:nth-child(1){width:100%; margin-bottom:2%;}
 .sns_mid li:nth-child(2){width:49%; float:left; margin-right:2%;}
 .sns_mid li:nth-child(3){width:49%; float:left;}
+.sns_mid li:hover{opacity: 0.5;}
 .sns_small > ul> li{display:block;}
 .sns_rt{width:49%; float:left; height:100%;}
 .sns_small2{width:33%;  float:left; overflow: hidden;}
@@ -135,11 +234,13 @@ header{width:100%; height:12%; background-color:#edeef2; }
 .sns_small2 li:nth-child(1){width:100%; margin-bottom:5%;}
 .sns_small2 li:nth-child(2){width:100%; margin-bottom:5%;}
 .sns_small2 li:nth-child(3){width:100%; }
+.sns_small2 li:hover{opacity: 0.5;}
 .sns_mid2{width:65%; float:left; }
 .sns_mid2  img{width:94%}
 .sns_mid2 li:nth-child(1){width:44%; float:left; margin-bottom:2%;}
-.sns_mid2 li:nth-child(2){width:50%; float:left; }
+.sns_mid2 li:nth-child(2){width:50%; float:left; margin-bottom:2%;}
 .sns_mid2 li:nth-child(3){width:97%; }
+.sns_mid2 li img:hover{opacity: 0.5;}
 .sns_small2 > ul> li{display:block;}
 
 footer {width:100%; height:20%; background-color:#222;}
@@ -151,3 +252,166 @@ footer {width:100%; height:20%; background-color:#222;}
 .foot_txt > li:nth-child(7)>span:nth-child(2){float:right; }
 .foot_txt2 {width:80%; float:right; padding:1% 5%;}
 .foot_txt2 > li{float:right; padding-left:2%;}
+
+
+@media screen and (max-width:1300px) {
+	.nav{ width:90%;  left:5%;}
+	.menu > div > img{width:70%; min-width:35px;}
+	.menu > div:nth-child(1){float:left; width:30%; padding:5%;}
+	.menu > div:nth-child(2){float:left; width:67%; font-size: 1.25rem;}
+}
+
+
+@media screen and (max-width:1025px) {
+	.about { font-size: 1.1rem; }
+	.products { height:120%; }
+	.product { height:120%; }
+	.best {padding-top:10%;}
+	.sell_box {  width:23%; margin:2% 1% 0 1%; }
+	.sell_box:nth-child(9), .sell_box:last-child{display:none;}
+}
+
+@media screen and (max-width:990px) {
+	.slides {width:100%; height:auto; position: relative;}
+	.nav{ width:100%; left:0;}
+	.nav > ul > li { height:25%; }
+	.menu > div > img{width:60%; min-width:30px; }
+	.menu > div:nth-child(1){float:left; width:25%; padding:5% 20% 5% 5%;}
+	.logo_wrap {height:100%; }
+	.menu > div:nth-child(2){ width:75%; font-size: 1.25rem; }
+	.banners{ height:auto; }
+	.banner {height:auto;}
+	.store_box{width:70%;  margin:4% 0 0 35%;}
+	.greece_cont{top:-100%; right:-220%;}
+	.canada {top:40%; left:13%; }
+	.africa {bottom:24%; right:44%;}
+	.zealand {bottom:17%; right:10%;}
+	.australia {bottom:24%; right:20%;}
+	.chile{bottom:20%; left:29%;}
+	.chile_cont{bottom:5%; left:-180%; }
+	.argentina{bottom:22%; left:33%;}
+	.argentina_cont{bottom:-50%; left:40%;}
+	.sns_wrap {width:100%; height:auto; background-color:#222; }
+}
+
+@media screen and (max-width:870px){
+	.about { font-size: 0.95rem; }
+	.menu_hover > ul > li {font-size: 1rem;}
+	.nav > ul > li { width:33.33%; }
+	.nav > ul > li:nth-child(3) { border-right:0; }
+	.menu:nth-child(3) > div:nth-child(2){border-right:0;}
+	.menu > div:nth-child(2){font-size: 1.25rem; margin-top:6%;}
+	.best {padding-top:30%;}
+	.products { height:160%; }
+	.product { height:160%; }
+	.sell_box {  width:30%; margin:2% 1.5% 0 1.5%; float:left;}
+	.sell_box:nth-child(9){display:inline-block;}
+	.sell_box:last-child{display:none;}
+	.wine_time{ padding-top:35%;}
+	.find_store{ padding-top:35%;}
+	.wine_map {padding-top:35%; }
+	.event_wine {padding-top:35%;}
+	.sns_wine {padding-top:35%;}
+	.dec_wrap {height:90%;}
+	.box > div > img{min-width:90px;}
+	.cell > p > span {display:none;}
+	.time5{bottom:15%; }
+	.time6{ bottom:21%; }
+	.wine_mark {bottom:18%; }
+	.store_wrap {width:100%; height:100%; background-color:#222; }
+	.store_box{width:75%; height:85%; margin:4% 0 0 35%;}
+	.store { background-position:center; }
+	.map_table{ padding-top:40%;  }
+	.map_cell > p >  span {display: none;}
+	.canada {display: none; }
+	.america {display: none;}
+	.zealand {display: none;}
+	.australia {display: none;}
+	.africa {display: none;}
+	.argentina{display: none;}
+	.chile{display: none;}
+	.greece_cont{display: none;}
+	.map { background-size:120%; }
+	.event_wrap { height:80%; }
+	.sale_cont {width:170%; margin-left:-20%;}
+	.sale_btn {width:30%;  font-size: 1rem; }
+	.sale_lt > span:nth-child(1){font-size: 2rem;}
+	.sale_lt > span:nth-child(2){font-size: 4rem; }
+	.sale_rt {font-size: 1.25rem; }
+	.sns_box {margin-left:18%;}
+	.sns_lt{width:80%;  float:none; ; margin-right:0%; margin-bottom:2%;}
+	.sns_rt{width:87%; float:none; }
+	.foot_txt > li:nth-child(5){width:25%;}
+	.foot_txt > li:nth-child(6){width:30%;}
+	.foot_txt > li:nth-child(7){width:25%; border:1px solid #fff; padding:0.5% 2% 0.5% 0; }
+	.foot_txt2 {width:100%; float:right; padding:1% 5%;}
+}
+
+@media screen and (max-width:768px){
+	.gnb { display: none; }
+	.ban_cont {right:50%; transform: translateX(50%); }
+	.ban_pro {display:none; }
+	.best {padding-top:35%;}
+	.products { height:150%; }
+	.product { height:150%; }
+	.dec_wrap {height:90%;}
+	.store_box{width:100%; height:90%; margin:4% 5% 0 10%; color:#fff; }
+	.store_box >li{ color:#fff;}
+	.map_table{ padding-top:45%;  font-size: 0.75rem;}
+	.navs_mo {display:block;}
+	.navs_sub {display:none;}
+	.map { background-size:150%; }
+}
+@media screen and (max-width:684px){
+	.best {padding-top:35%;}
+	.products { height:160%; }
+	.product { height:160%; }
+}
+
+@media screen and (max-width:665px){
+	.best {padding-top:25%;}
+	.products { height:195%; }
+	.product { height:195%; }
+	.sell_box {  width:40%; margin:2% 5% 0 5%; }
+	.sell_box:nth-child(9){display:none;}
+	.banners{width:100%; height:70%;  }
+	.banner {width:100%; height:95%; }
+	.dec_wrap {height:120%;}
+	.wine_time{ padding-top:25%;}
+	.box{float: none;  position: absolute; width:100%;}
+	.table{width:70%; margin:0 auto;   float: none; padding-top:50%;}
+	.time1{ left:33%;}
+	.time2{ left:40%; }
+	.time3{ top:9%; left:48%;}
+	.time4{ right:15%; }
+	.time5{bottom:30%; }
+	.time6{ bottom:35%; }
+	.wine_mark {bottom:-10%; right:20%;}
+	.find_store{ padding-top:25%;}
+	.wine_map {padding-top:25%;}
+	.sns_wine {padding-top:10%;}
+	.store_box > li {float:none; margin-left:20%; }
+	.store_box > li:nth-child(3) >div:nth-child(1) {margin-top:2%; font-size: 1rem; }
+	.store_box >li:nth-child(2) >div:nth-child(2){  width:80%; margin:10% auto 0 15%; }
+	.store_box >li{height:20%;}
+	.store_box >li:nth-child(2){height:15%;}
+	.store_wrap {width:100%; height:140%; background-color:#222; }
+	.store {width:95%; height:100%;background-position:left;}
+	.map_table{ padding-top:8%; }
+}
+
+
+
+@media screen and (max-width:650px){
+	.ban_cont {min-width:250px; height:auto; }
+}
+
+@media screen and (max-width:557px){
+	.table{width:80%; padding-top:65%;}
+	.wine_mark {bottom:-20%; }
+	.best {padding-top:25%;}
+}
+
+@media screen and (max-width:516px){
+	.dec_wrap {height:140%;}
+}

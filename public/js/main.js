@@ -1,3 +1,111 @@
+var config = {
+    apiKey: "AIzaSyBDEJJwVkb9ojX_DkQUEcrYFfmzXHjeNPQ",
+    authDomain: "thfql4136-wine.firebaseapp.com",
+    databaseURL: "https://thfql4136-wine.firebaseio.com",
+    projectId: "thfql4136-wine",
+    storageBucket: "thfql4136-wine.appspot.com",
+    messagingSenderId: "178677387199"
+  };
+  firebase.initializeApp(config);
+
+  var db = firebase.database();
+var ref = db.ref("root"); //var ref; 이렇게 선언만 해줘도 됨 어차피 값이 바뀔꺼니깐
+var key;
+
+(function initHome() { //(function initHome(){})(); = initHome();
+	ref = db.ref("root/home");
+	ref.on('child_added', homeAdd); //main에서는 child_added만 넣어주면 됨
+	ref.on('child_removed', homeRev);
+	ref.on('child_changed', homeChg);
+})();
+
+function homeAdd(data) {
+	var id = data.key;
+	var img = data.val().img; //내용(data.val())중에 img를 가져와라
+	var src = '../img/' + img;
+	var title = data.val().title;
+	var local = data.val().local;
+	var star = data.val().star;
+	var price = data.val().price;
+	var html = '';
+	html += '<div class="sell_box" id="'+id+'" >';
+	html += '<div class="sellers_prods ">';
+	html += '<div class="sell_prod">';
+	html += '<img src="'+src+'" alt="img" class="img">';
+	html += '</div>';
+	html += '<div class="sell_prod_cont">';
+	html += '<span class="tit">'+title+' </span>';
+	html += '</div>';
+	html += '<div class="sell_prod_cont2 clear">';
+	html += '<div class="itary it">'+local+'</div>';
+	html += '<div class="price">￦'+price+'</div>';
+	html += '</div>';
+	html += '<div class="sell_prod_cont3 clear">';
+	html += '<div><span class="stars-container stars-'+star+'">★★★★★</span></div>';
+	html += '</div>';
+	html += '<div class="sell_prod_cont4 clear">';
+	html += '<div class="more">more</div>';
+	html += '<div class="cart">';
+	html += '<div class="far fa-heart heart"></div>';
+	html += '<div>';
+	html += '<div class="fas fa-shopping-cart"></div>';
+	html += '</div>';
+	html += '</div>';
+	html += '</div>';
+	html += '</div>';
+	html += '</div>';
+
+
+	$(".product").append(html);
+	$("#home_wrap").append(html);
+
+// 	var w=0;
+// 	if($(".sell_prod_cont3 > li").hasClass("gr")){
+// 	for(w = 0; w < star; w++){
+// 	   $(".sell_prod_cont3 > li").eq(w).removeClass("gr");
+// 	   $(".sell_prod_cont3 > li").eq(w).addClass("purple");	
+// 	}
+// }
+$(function() {
+	function addScore(score, $domElement) {
+	  $("<span class='stars-container'>")
+		.addClass("stars-" + score.toString())
+		.text("★★★★★")
+		.appendTo($domElement);
+	}
+  
+	addScore(star, $("#fixture"));
+  });
+}
+
+function homeRev(data) {
+	var id = data.key;
+	$("#" + id).remove();
+}
+
+function homeChg(data) {
+	var id = data.key;
+	var div = $("#" + id);
+	$("img", div).attr("src", "../img/" + data.val().img);
+	$(".tit", div).html(data.val().title);
+	$(".itary", div).html(data.val().local);
+	$(".price", div).html(data.val().price);
+}
+
+$(".fa-bars").click(function(){
+	$(".navs_sub").stop().slideToggle(100);
+});
+
+$('body').imagesLoaded()
+.done( function( instance ) {
+	$(".loader").hide(0);
+  console.log('all images successfully loaded');
+})
+.progress( function( instance, image ) {
+  var result = image.isLoaded ? 'loaded' : 'broken';
+  console.log( 'image is ' + result + ' for ' + image.img.src );
+});
+
 $(".gnb").hover(function(){
     $(".menu_hover").stop().slideDown();
 }, function(){
@@ -59,7 +167,7 @@ clearInterval(interval2);
    interval2 = setInterval(slide2, 3000);
  });
 
- 
+
   var WheelScroll = (function(){
 	function WheelScroll(_opt) {
 		var obj = this;
@@ -158,19 +266,30 @@ $(".menu").mouseleave(function(){
 		}
 	});
 });
+
+	
+
 $(".menu").click(function(){
 	n = $(this).index();
 	$(".menu").each(function(i){
+		$(".time").removeClass($(".time").data("ani"));
 		$(this).find(".menu_tit").css({"color":"#222"});
 		$(this).find("img").attr("src",oriImg[i]);
 		$(this).find(".line").stop().animate({"width":0}, 100);
 	});
+	
 	$(this).find(".menu_tit").css({"color":"#a22c4d"});
 	$(this).find("img").attr("src", swapImg[n]);
 	$(this).find(".line").stop().animate({"width":"100%"}, 100);
 });
 $(".menu").eq(0).trigger("click");
 
+if($(".menu").eq(1).click(function(){
+	
+	var cls = $(".time").data("ani");
+	$(".time").addClass(cls);
+	
+}));
 
 $(function() {
 	function swing() {
